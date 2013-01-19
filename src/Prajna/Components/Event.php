@@ -13,4 +13,8 @@ class Event
 	public function __construct($session_id){
 		$this->session_id = $session_id;
 	}
+
+	public function register(){}
+	public function unregister(){}
+	public function next(){}
 }
