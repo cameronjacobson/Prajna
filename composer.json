@@ -1,0 +1,16 @@
+{
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://packages.zendframework.com/"
+		}
+	],
+	"require": {
+		"zendframework/zend-xmlrpc": "2.0.*"
+	},
+	"autoload": {
+		"psr-0": {
+			"Prajna": "src/"
+		}
+	}
+}
