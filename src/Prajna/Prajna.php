@@ -39,13 +39,14 @@ class Prajna extends Client
 {
 	use XmlRpcHelper;
 
-	protected $session_id;
-	protected $user;
-	protected $uuid;
-	protected $host;
+	public $session_id;
+	public $user;
+	public $uuid;
+	public $host;
 
 	public function __construct(Array $options){
 		parent::__construct($options['url']);
+		$this->client = $this;
 		$this->host = parse_url($options['url'],PHP_URL_HOST);
 		$this->user = $options['user'];
 		$this->session_id = $this->doCall('session.login_with_password',array(
@@ -95,110 +96,110 @@ class Prajna extends Client
 	}
 
 	public function task(){
-		return new Task($this->session_id);
+		return new Task($this);
 	}
 
 	public function event(){
-		return new Event($this->session_id);
+		return new Event($this);
 	}
 
 	public function VM(){
-		return new VM($this->session_id);
+		return new VM($this);
 	}
 
 	public function VM_metrics(){
-		return new VMMetrics($this->session_id);
+		return new VMMetrics($this);
 	}
 
 	public function VM_guest_metrics(){
-		return new VMGuestMetrics($this->session_id);
+		return new VMGuestMetrics($this);
 	}
 
 	public function host(){
-		return new Host($this->session_id);
+		return new Host($this);
 	}
 
 	public function host_metrics(){
-		return new HostMetrics($this->session_id);
+		return new HostMetrics($this);
 	}
 
 	public function host_cpu(){
-		return new HostCpu($this->session_id);
+		return new HostCpu($this);
 	}
 
 	public function network(){
-		return new Network($this->session_id);
+		return new Network($this);
 	}
 
 	public function VIF(){
-		return new VIF($this->session_id);
+		return new VIF($this);
 	}
 
 	public function VIF_metrics(){
-		return new VIFMetrics($this->session_id);
+		return new VIFMetrics($this);
 	}
 
 	public function PIF(){
-		return new PIF($this->session_id);
+		return new PIF($this);
 	}
 
 	public function PIF_metrics(){
-		return new PIFMetrics($this->session_id);
+		return new PIFMetrics($this);
 	}
 
 	public function SR(){
-		return new SR($this->session_id);
+		return new SR($this);
 	}
 
 	public function VDI(){
-		return new VDI($this->session_id);
+		return new VDI($this);
 	}
 
 	public function VBD(){
-		return new VBD($this->session_id);
+		return new VBD($this);
 	}
 
 	public function VBD_metrics(){
-		return new VBDMetrics($this->session_id);
+		return new VBDMetrics($this);
 	}
 
 	public function PBD(){
-		return new PBD($this->session_id);
+		return new PBD($this);
 	}
 
 	public function crashdump(){
-		return new CrashDump($this->session_id);
+		return new CrashDump($this);
 	}
 
 	public function VTPM(){
-		return new VTPM($this->session_id);
+		return new VTPM($this);
 	}
 
 	public function console(){
-		return new Console($this->session_id);
+		return new Console($this);
 	}
 
 	public function DPCI(){
-		return new DPCI($this->session_id);
+		return new DPCI($this);
 	}
 
 	public function PPCI(){
-		return new PPCI($this->session_id);
+		return new PPCI($this);
 	}
 
 	public function user(){
-		return new User($this->session_id);
+		return new User($this);
 	}
 
 	public function XSPolicy(){
-		return new XSPolicy($this->session_id);
+		return new XSPolicy($this);
 	}
 
 	public function ACMPolicy(){
-		return new ACMPolicy($this->session_id);
+		return new ACMPolicy($this);
 	}
 
 	public function debug(){
-		return new Debug($this->session_id);
+		return new Debug($this);
 	}
 }

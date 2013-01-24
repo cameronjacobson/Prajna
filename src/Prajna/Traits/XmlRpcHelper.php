@@ -11,9 +11,9 @@ trait XmlRpcHelper
         $request = new Request();
         $request->setMethod($method);
         $request->setParams($params);
-        $this->doRequest($request);
-        $resp = $this->getLastResponse();
-        $response = $this->returnResponse($this->getLastResponse());
+        $this->client->doRequest($request);
+        $resp = $this->client->getLastResponse();
+        $response = $this->returnResponse($this->client->getLastResponse());
         return $response['Value'];
     }
 
