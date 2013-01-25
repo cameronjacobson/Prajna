@@ -11,7 +11,7 @@ class VMGuestMetrics
 	public $disks;
 	public $networks;
 	public $other;
-	public $last_updated
+	public $last_updated;
 
 	public function __construct(){}
 }
