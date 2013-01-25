@@ -43,11 +43,13 @@ class Prajna extends Client
 	public $username;
 	public $uuid;
 	public $host;
+	public $url;
 
 	public function __construct(Array $options){
-		parent::__construct($options['host']);
+		parent::__construct($options['url']);
 		$this->client = $this;
-		$this->host = parse_url($options['host'],PHP_URL_HOST);
+		$this->url = $options['url'];
+		$this->host = parse_url($options['url'],PHP_URL_HOST);
 		$this->username = $options['username'];
 		$this->session_id = $this->doCall('session.login_with_password',array(
 			$options['username'],
@@ -201,5 +203,13 @@ class Prajna extends Client
 
 	public function debug(){
 		return new Debug($this);
+	}
+
+	public function __sleep(){
+		return array('session_id','username','uuid','host','url');
+	}
+
+	public function __wakeup(){
+		parent::__construct($this->url);
 	}
 }
