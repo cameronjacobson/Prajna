@@ -40,18 +40,18 @@ class Prajna extends Client
 	use XmlRpcHelper;
 
 	public $session_id;
-	public $user;
+	public $username;
 	public $uuid;
 	public $host;
 
 	public function __construct(Array $options){
-		parent::__construct($options['url']);
+		parent::__construct($options['host']);
 		$this->client = $this;
-		$this->host = parse_url($options['url'],PHP_URL_HOST);
-		$this->user = $options['user'];
+		$this->host = parse_url($options['host'],PHP_URL_HOST);
+		$this->username = $options['username'];
 		$this->session_id = $this->doCall('session.login_with_password',array(
-			$options['user'],
-			$options['pass']
+			$options['username'],
+			$options['password']
 		));
 		list(,$this->uuid) = explode(':',$this->session_id);
 	}
@@ -72,7 +72,7 @@ class Prajna extends Client
 	}
 
 	public function get_this_user(){
-		return $this->user;
+		return $this->username;
 	}
 
 	public function get_last_active(){
@@ -83,7 +83,7 @@ class Prajna extends Client
 		return array(
 			'uuid'=>$this->uuid,
 			'this_host'=>$this->host,
-			'this_user'=>$this->user,
+			'this_user'=>$this->username,
 			'last_active'=>time()
 		);
 	}

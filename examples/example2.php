@@ -10,11 +10,7 @@ use Zend\XmlRpc\Client\Exception\HttpException;
 use Prajna\PrajnaException;
 
 try{
-	$x = new Prajna(array(
-		'url'=>'http://127.0.0.1',
-		'user'=>$config['xapi']['USERNAME'],
-		'pass'=>$config['xapi']['PASSWORD']
-	));
+	$x = new Prajna($config['xapi']);
 	$host = $x->host();
 	$hosts = $host->get_all();
 var_dump($hosts);
