@@ -15,8 +15,15 @@ class VBD
 		$this->session_id = $this->client->session_id;
 	}
 
-	public function media_change($VBD,$VDI){
-		return $this->doCall('VBD.media_change',array(
+	public function eject($VBD){
+		return $this->doCall('VBD.eject',array(
+			$this->session_id,
+			$VBD
+		));
+	}
+
+	public function insert($VBD,$VDI){
+		return $this->doCall('VBD.insert',array(
 			$this->session_id,
 			$VBD,
 			$VDI
@@ -37,14 +44,48 @@ class VBD
 		));
 	}
 
+	public function unplug_force($VBD){
+		return $this->doCall('VBD.unplug_force',array(
+			$this->session_id,
+			$VBD
+		));
+	}
+
+	public function assert_attachable($VBD){
+		return $this->doCall('VBD.assert_attachable',array(
+			$this->session_id,
+			$VBD
+		));
+	}
+
 	public function get_all(){
 		return $this->doCall('VBD.get_all',array(
 			$this->session_id
 		));
 	}
 
+	public function get_all_records(){
+		return $this->doCall('VBD.get_all_records',array(
+			$this->session_id
+		));
+	}
+
 	public function get_uuid($VBD){
 		return $this->doCall('VBD.get_uuid',array(
+			$this->session_id,
+			$VBD
+		));
+	}
+
+	public function get_allowed_operations($VBD){
+		return $this->doCall('VBD.get_allowed_operations',array(
+			$this->session_id,
+			$VBD
+		));
+	}
+
+	public function get_current_operations($VBD){
+		return $this->doCall('VBD.get_current_operations',array(
 			$this->session_id,
 			$VBD
 		));
@@ -71,11 +112,18 @@ class VBD
 		));
 	}
 
-	public function set_device($VBD,$device){
-		return $this->doCall('VBD.set_device',array(
+	public function get_userdevice($VBD){
+		return $this->doCall('VBD.get_userdevice',array(
+			$this->session_id,
+			$VBD
+		));
+	}
+
+	public function set_userdevice($VBD,$userdevice){
+		return $this->doCall('VBD.set_userdevice',array(
 			$this->session_id,
 			$VBD,
-			$device
+			$userdevice
 		));
 	}
 
@@ -121,6 +169,67 @@ class VBD
 			$this->session_id,
 			$VBD,
 			$type
+		));
+	}
+
+	public function get_unpluggable($VBD){
+		return $this->doCall('VBD.get_unpluggable',array(
+			$this->session_id,
+			$VBD
+		));
+	}
+
+	public function set_unpluggable($VBD,$unpluggable){
+		return $this->doCall('VBD.set_unpluggable',array(
+			$this->session_id,
+			$VBD,
+			$unpluggable
+		));
+	}
+
+	public function get_storage_lock($VBD){
+		return $this->doCall('VBD.get_storage_lock',array(
+			$this->session_id,
+			$VBD
+		));
+	}
+
+	public function get_empty($VBD){
+		return $this->doCall('VBD.get_empty',array(
+			$this->session_id,
+			$VBD
+		));
+	}
+
+	public function get_other_config($VBD){
+		return $this->doCall('VBD.get_other_config',array(
+			$this->session_id,
+			$VBD
+		));
+	}
+
+	public function set_other_config($VBD,Array $config){
+		return $this->doCall('VBD.get_other_config',array(
+			$this->session_id,
+			$VBD,
+			$config
+		));
+	}
+
+	public function add_to_other_config($VBD,$key,$value){
+		return $this->doCall('VBD.add_to_other_config',array(
+			$this->session_id,
+			$VBD,
+			$key,
+			$value
+		));
+	}
+
+	public function remove_from_other_config($VBD,$key){
+		return $this->doCall('VBD.remove_from_other_config',array(
+			$this->session_id,
+			$VBD,
+			$key
 		));
 	}
 

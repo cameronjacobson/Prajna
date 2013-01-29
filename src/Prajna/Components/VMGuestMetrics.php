@@ -21,6 +21,12 @@ class VMGuestMetrics
 		));
 	}
 
+	public function get_all_records(){
+		return $this->doCall('VM_guest_metrics.get_all_records',array(
+			$this->session_id
+		));
+	}
+
 	public function get_uuid($VMGuestMetrics){
 		return $this->doCall('VM_guest_metrics.get_uuid',array(
 			$this->session_id,
@@ -37,6 +43,13 @@ class VMGuestMetrics
 
 	public function get_PV_drivers_version($VMGuestMetrics){
 		return $this->doCall('VM_guest_metrics.get_PV_drivers_version',array(
+			$this->session_id,
+			$VMGuestMetrics
+		));
+	}
+
+	public function get_PV_drivers_up_to_date($VMGuestMetrics){
+		return $this->doCall('VM_guest_metrics.get_PV_drivers_up_to_date',array(
 			$this->session_id,
 			$VMGuestMetrics
 		));
@@ -72,6 +85,45 @@ class VMGuestMetrics
 
 	public function get_last_updated($VMGuestMetrics){
 		return $this->doCall('VM_guest_metrics.get_last_updated',array(
+			$this->session_id,
+			$VMGuestMetrics
+		));
+	}
+
+	public function get_other_config($VMGuestMetrics){
+		return $this->doCall('VM_guest_metrics.get_other_config',array(
+			$this->session_id,
+			$VMGuestMetrics
+		));
+	}
+
+	public function set_other_config($VMGuestMetrics,Array $config){
+		return $this->doCall('VM_guest_metrics.set_other_config',array(
+			$this->session_id,
+			$VMGuestMetrics,
+			$config
+		));
+	}
+
+	public function add_to_other_config($VMGuestMetrics,$key,$value){
+		return $this->doCall('VM_guest_metrics.add_to_other_config',array(
+			$this->session_id,
+			$VMGuestMetrics,
+			$key,
+			$value
+		));
+	}
+
+	public function remove_from_other_config($VMGuestMetrics,$key){
+		return $this->doCall('VM_guest_metrics.get_last_updated',array(
+			$this->session_id,
+			$VMGuestMetrics,
+			$key
+		));
+	}
+
+	public function get_live($VMGuestMetrics){
+		return $this->doCall('VM_guest_metrics.get_live',array(
 			$this->session_id,
 			$VMGuestMetrics
 		));

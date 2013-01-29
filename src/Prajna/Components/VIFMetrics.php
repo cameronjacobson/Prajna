@@ -21,6 +21,12 @@ class VIFMetrics
 		));
 	}
 
+	public function get_all_records(){
+		return $this->doCall('VIF_metrics.get_records',array(
+			$this->session_id
+		));
+	}
+
 	public function get_uuid($VIFMetrics){
 		return $this->doCall('VIF_metrics.get_uuid',array(
 			$this->session_id,
@@ -46,6 +52,35 @@ class VIFMetrics
 		return $this->doCall('VIF_metrics.get_last_updated',array(
 			$this->session_id,
 			$VIFMetrics
+		));
+	}
+
+	public function get_other_config($VIFMetrics){
+		return $this->doCall('VIF_metrics.get_other_config',array(
+			$this->session_id,
+			$VIFMetrics
+		));
+	}
+	public function set_other_config($VIFMetrics,Array $config){
+		return $this->doCall('VIF_metrics.set_other_config',array(
+			$this->session_id,
+			$VIFMetrics,
+			$config
+		));
+	}
+	public function add_to_other_config($VIFMetrics,$key,$value){
+		return $this->doCall('VIF_metrics.add_to_other_config',array(
+			$this->session_id,
+			$VIFMetrics,
+			$key,
+			$value
+		));
+	}
+	public function remove_from_other_config($VIFMetrics,$key){
+		return $this->doCall('VIF_metrics.remove_from_other_config',array(
+			$this->session_id,
+			$VIFMetrics,
+			$key
 		));
 	}
 

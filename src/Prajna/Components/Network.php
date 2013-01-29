@@ -15,8 +15,32 @@ class Network
 		$this->session_id = $this->client->session_id;
 	}
 
+	public function create_new_blob($network,$name,$mime_type,$public){
+		return $this->doCall('network.create_new_blob',array(
+			$this->session_id,
+			$network,
+			$name,
+			$mime_type,
+			$public
+		));
+	}
+
+	public function set_default_locking_mode($network,$locking_mode){
+		return $this->doCall('network.set_default_locking_mode',array(
+			$this->session_id,
+			$network,
+			$locking_mode
+		));
+	}
+
 	public function get_all(){
 		return $this->doCall('network.get_all',array(
+			$this->session_id
+		));
+	}
+
+	public function get_all_records(){
+		return $this->doCall('network.get_all_records',array(
 			$this->session_id
 		));
 	}
@@ -58,6 +82,21 @@ class Network
 		));
 	}
 
+	public function get_allowed_operations($network){
+		return $this->doCall('network.get_allowed_operations',array(
+			$this->session_id,
+			$network
+		));
+	}
+
+	public function get_current_operations($network){
+		return $this->doCall('network.get_current_operations',array(
+			$this->session_id,
+			$network
+		));
+	}
+
+
 	public function get_VIFs($network){
 		return $this->doCall('network.get_VIFs',array(
 			$this->session_id,
@@ -72,33 +111,18 @@ class Network
 		));
 	}
 
-	public function get_default_gateway($network){
-		return $this->doCall('network.get_default_gateway',array(
+	public function get_MTU($network){
+		return $this->doCall('network.get_MTU',array(
 			$this->session_id,
 			$network
 		));
 	}
 
-	public function set_default_gateway($network,$gateway){
-		return $this->doCall('network.set_default_gateway',array(
+	public function set_MTU($network,$value){
+		return $this->doCall('network.set_MTU',array(
 			$this->session_id,
 			$network,
-			$gateway
-		));
-	}
-
-	public function get_default_netmask($network){
-		return $this->doCall('network.get_default_netmask',array(
-			$this->session_id,
-			$network
-		));
-	}
-
-	public function set_default_netmask($network,$netmask){
-		return $this->doCall('network.set_default_netmask',array(
-			$this->session_id,
-			$network,
-			$netmask
+			$value
 		));
 	}
 
@@ -131,6 +155,58 @@ class Network
 			$this->session_id,
 			$network,
 			$key
+		));
+	}
+
+	public function get_bridge($network){
+		return $this->doCall('network.get_bridge',array(
+			$this->session_id,
+			$network
+		));
+	}
+
+	public function get_blobs($network){
+		return $this->doCall('network.get_blobs',array(
+			$this->session_id,
+			$network
+		));
+	}
+
+	public function get_tags($network){
+		return $this->doCall('network.get_tags',array(
+			$this->session_id,
+			$network
+		));
+	}
+
+	public function set_tags($network,Array $tags){
+		return $this->doCall('network.set_tags',array(
+			$this->session_id,
+			$network,
+			$tags
+		));
+	}
+
+	public function add_tags($network,$tags){
+		return $this->doCall('network.add_tags',array(
+			$this->session_id,
+			$network,
+			$tags
+		));
+	}
+
+	public function remove_tags($network,$tags){
+		return $this->doCall('network.remove_tags',array(
+			$this->session_id,
+			$network,
+			$tags
+		));
+	}
+
+	public function get_default_gateway($network){
+		return $this->doCall('network.get_default_gateway',array(
+			$this->session_id,
+			$network
 		));
 	}
 
