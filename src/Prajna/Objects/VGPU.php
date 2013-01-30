@@ -2,12 +2,12 @@
 
 namespace Prajna\Objects;
 
-class PBD
+class VGPU
 {
 	public $uuid;
-	public $host;
-	public $SR;
-	public $device_config;
+	public $VM;
+	public $GPU_group;
+	public $device;
 	public $currently_attached;
 	public $other_config;
 

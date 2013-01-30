@@ -13,7 +13,9 @@ class VMMetrics
 	public $VCPUs_flags;
 	public $state;
 	public $start_time;
+	public $install_time
 	public $last_updated;
+	public $other_config;
 
 	public function __construct(){}
 }

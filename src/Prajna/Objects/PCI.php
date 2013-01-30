@@ -2,20 +2,20 @@
 
 namespace Prajna\Objects;
 
-class PIFMetrics
+class PPCI
 {
 	public $uuid;
-	public $io_read_kbs;
-	public $io_write_kbs;
-	public $carrier;
+	public $class_id;
+	public $class_name;
 	public $vendor_id;
 	public $vendor_name;
 	public $device_id;
 	public $device_name;
-	public $speed;
-	public $duplex;
-	public $pci_bus_path;
-	public $last_updated;
+	public $host;
+	public $pci_id;
+	public $functions;
+	public $attached_VMs;
+	public $dependencies;
 	public $other_config;
 
 	public function __construct(){}

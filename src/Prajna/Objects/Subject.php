@@ -2,14 +2,12 @@
 
 namespace Prajna\Objects;
 
-class PBD
+class Subject
 {
 	public $uuid;
-	public $host;
-	public $SR;
-	public $device_config;
-	public $currently_attached;
+	public $subject_identifier;
 	public $other_config;
+	public $roles;
 
 	public function __construct(){}
 }

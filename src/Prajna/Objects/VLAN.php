@@ -2,13 +2,12 @@
 
 namespace Prajna\Objects;
 
-class PBD
+class VLAN
 {
 	public $uuid;
-	public $host;
-	public $SR;
-	public $device_config;
-	public $currently_attached;
+	public $tagged_PIF;
+	public $untagged_PIF;
+	public $tag;
 	public $other_config;
 
 	public function __construct(){}

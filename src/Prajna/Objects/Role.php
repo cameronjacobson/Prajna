@@ -2,11 +2,12 @@
 
 namespace Prajna\Objects;
 
-class VTPM
+class Role
 {
 	public $uuid;
-	public $VM;
-	public $backend;
+	public $name_label;
+	public $name_description;
+	public $subroles;
 
 	public function __construct(){}
 }

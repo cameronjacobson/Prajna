@@ -2,11 +2,10 @@
 
 namespace Prajna\Objects;
 
-class VTPM
+class DRTask
 {
 	public $uuid;
-	public $VM;
-	public $backend;
+	public $introduced_SRs;
 
 	public function __construct(){}
 }

@@ -2,13 +2,10 @@
 
 namespace Prajna\Objects;
 
-class PBD
+class Secret
 {
 	public $uuid;
-	public $host;
-	public $SR;
-	public $device_config;
-	public $currently_attached;
+	public $value;
 	public $other_config;
 
 	public function __construct(){}

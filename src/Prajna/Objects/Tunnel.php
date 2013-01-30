@@ -2,13 +2,12 @@
 
 namespace Prajna\Objects;
 
-class PBD
+class Tunnel
 {
 	public $uuid;
-	public $host;
-	public $SR;
-	public $device_config;
-	public $currently_attached;
+	public $access_PIF;
+	public $transport_PIF;
+	public $status;
 	public $other_config;
 
 	public function __construct(){}

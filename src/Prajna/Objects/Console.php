@@ -9,6 +9,7 @@ class Console
 	public $location;
 	public $VM;
 	public $other_config;
+	public $port;
 
 	public function __construct(){}
 }

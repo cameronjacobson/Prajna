@@ -2,13 +2,12 @@
 
 namespace Prajna\Objects;
 
-class PBD
+class PGPU
 {
 	public $uuid;
+	public $PCI;
+	public $GPU_group;
 	public $host;
-	public $SR;
-	public $device_config;
-	public $currently_attached;
 	public $other_config;
 
 	public function __construct(){}

@@ -2,13 +2,13 @@
 
 namespace Prajna\Objects;
 
-class PBD
+class HostCrashDump
 {
 	public $uuid;
 	public $host;
-	public $SR;
-	public $device_config;
-	public $currently_attached;
+	public $timestamp;
+	public $size;
+	public $filename;
 	public $other_config;
 
 	public function __construct(){}
