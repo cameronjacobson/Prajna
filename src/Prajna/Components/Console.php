@@ -21,6 +21,12 @@ class Console
 		));
 	}
 
+	public function get_all_records(){
+		return $this->doCall('console.get_all_records',array(
+			$this->session_id
+		));
+	}
+
 	public function get_uuid($console){
 		return $this->doCall('console.get_uuid',array(
 			$this->session_id,

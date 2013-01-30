@@ -44,6 +44,38 @@ class User
 		));
 	}
 
+	public function get_other_config($user){
+		return $this->doCall('user.get_other_config',array(
+			$this->session_id,
+			$user
+		));
+	}
+
+	public function set_other_config($user,Array $other_config){
+		return $this->doCall('user.set_other_config',array(
+			$this->session_id,
+			$user,
+			$other_config
+		));
+	}
+
+	public function add_to_other_config($user,$key,$value){
+		return $this->doCall('user.add_to_other_config',array(
+			$this->session_id,
+			$user,
+			$key,
+			$value
+		));
+	}
+
+	public function remove_from_other_config($user,$key){
+		return $this->doCall('user.remove_from_other_config',array(
+			$this->session_id,
+			$user,
+			$key
+		));
+	}
+
 	public function create(Array $UserRecord){
 		return $this->doCall('user.create',array(
 			$this->session_id,

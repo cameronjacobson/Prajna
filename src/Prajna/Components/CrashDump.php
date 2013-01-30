@@ -28,6 +28,12 @@ class CrashDump
 		));
 	}
 
+	public function get_all_records(){
+		return $this->doCall('crashdump.get_all_records',array(
+			$this->session_id
+		));
+	}
+
 	public function get_uuid($crashdump){
 		return $this->doCall('crashdump.get_uuid',array(
 			$this->session_id,
@@ -46,6 +52,38 @@ class CrashDump
 		return $this->doCall('crashdump.get_VDI',array(
 			$this->session_id,
 			$crashdump
+		));
+	}
+
+	public function get_other_config($VDI){
+		return $this->doCall('crashdump.get_other_config',array(
+			$this->session_id,
+			$VDI
+		));
+	}
+
+	public function set_other_config($VDI,Array $config){
+		return $this->doCall('crashdump.set_other_config',array(
+			$this->session_id,
+			$VDI,
+			$config
+		));
+	}
+
+	public function add_to_other_config($VDI,$key,$value){
+		return $this->doCall('crashdump.add_to_other_config',array(
+			$this->session_id,
+			$VDI,
+			$key,
+			$value
+		));
+	}
+
+	public function remove_from_other_config($VDI,$key){
+		return $this->doCall('crashdump.remove_from_other_config',array(
+			$this->session_id,
+			$VDI,
+			$key
 		));
 	}
 

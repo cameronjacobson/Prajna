@@ -36,28 +36,6 @@ class VTPM
 		));
 	}
 
-	public function get_other_config($VTPM){
-		return $this->doCall('VTPM.get_other_config',array(
-			$this->session_id,
-			$VTPM
-		));
-	}
-
-	public function set_other_config($VTPM,Array $config){
-		return $this->doCall('VTPM.set_other_config',array(
-			$this->session_id,
-			$VTPM,
-			$config
-		));
-	}
-
-	public function get_runtime_properties($VTPM){
-		return $this->doCall('VTPM.get_runtime_properties',array(
-			$this->session_id,
-			$VTPM
-		));
-	}
-
 	public function create($VTPMRecord){
 		return $this->doCall('VTPM.create',array(
 			$this->session_id,
