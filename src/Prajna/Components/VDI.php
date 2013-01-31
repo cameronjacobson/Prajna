@@ -23,7 +23,7 @@ class VDI
 		));
 	}
 
-	public function clone($VDI,Array $driver_params){
+	public function _clone($VDI,Array $driver_params){
 		return $this->doCall('VDI.clone',array(
 			$this->session_id,
 			$VDI,

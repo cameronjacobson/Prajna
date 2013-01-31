@@ -30,7 +30,7 @@ class VM
 		));
 	}
 
-	public function clone($VM,$newname){
+	public function _clone($VM,$newname){
 		return $this->doCall('VM.clone',array(
 			$this->session_id,
 			$VM,

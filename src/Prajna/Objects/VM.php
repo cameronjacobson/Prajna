@@ -20,7 +20,7 @@ class VM
 	public $memory_target;
 	public $memory_static_max;
 	public $memory_dynamic_max;
-	public $memory_dynamic_min
+	public $memory_dynamic_min;
 	public $memory_static_min;
 	public $VCPUs_params;
 	public $VCPUs_max;
