@@ -15,12 +15,6 @@ class HostCpu
 		$this->session_id = $this->client->session_id;
 	}
 
-	public function get_all(){
-		return $this->doCall('host_cpu.get_all',array(
-			$this->session_id
-		));
-	}
-
 	public function get_all_records(){
 		return $this->doCall('host_cpu.get_all_records',array(
 			$this->session_id
@@ -140,20 +134,6 @@ class HostCpu
 			$this->session_id,
 			$HostCpu,
 			$key
-		));
-	}
-
-	public function get_by_uuid($uuid){
-		return $this->doCall('host_cpu.get_by_uuid',array(
-			$this->session_id,
-			$uuid
-		));
-	}
-
-	public function get_record($HostCpu){
-		return $this->doCall('host_cpu.get_record',array(
-			$this->session_id,
-			$HostCpu
 		));
 	}
 }

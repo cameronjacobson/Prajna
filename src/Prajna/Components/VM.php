@@ -636,12 +636,6 @@ class VM
 			$VM
 		));
 	}
-	public function get_memory_target($VM){
-		return $this->doCall('VM.get_memory_target',array(
-			$this->session_id,
-			$VM
-		));
-	}
 
 	public function get_memory_static_max($VM){
 		return $this->doCall('VM.get_memory_static_max',array(
@@ -973,21 +967,6 @@ class VM
 		));
 	}
 
-	public function get_PCI_bus($VM){
-		return $this->doCall('VM.get_PCI_bus',array(
-			$this->session_id,
-			$VM
-		));
-	}
-
-	public function set_PCI_bus($VM,$PCI_bus){
-		return $this->doCall('VM.set_PCI_bus',array(
-			$this->session_id,
-			$VM,
-			$PCI_bus
-		));
-	}
-
 	public function get_other_config($VM){
 		return $this->doCall('VM.get_other_config',array(
 			$this->session_id,
@@ -1113,13 +1092,6 @@ class VM
 			$this->session_id,
 			$VM,
 			$key
-		));
-	}
-
-	public function get_ha_always_run($VM){
-		return $this->doCall('VM.get_ha_always_run',array(
-			$this->session_id,
-			$VM
 		));
 	}
 

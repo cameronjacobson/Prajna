@@ -15,23 +15,6 @@ class PIF
 		$this->session_id = $this->client->session_id;
 	}
 
-	public function create_VLAN($device,$network,$host,$VLAN){
-		return $this->doCall('PIF.create_VLAN',array(
-			$this->session_id,
-			$device,
-			$network,
-			$host,
-			$VLAN
-		));
-	}
-
-	public function destroy($PIF){
-		return $this->doCall('PIF.destroy',array(
-			$this->session_id,
-			$PIF
-		));
-	}
-
 	public function reconfigure_ip($PIF,$mode,$IP,$netmask,$gateway,$DNS){
 		return $this->doCall('PIF.reconfigure_ip',array(
 			$this->session_id,

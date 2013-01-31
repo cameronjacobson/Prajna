@@ -60,15 +60,6 @@ class Pool
 		));
 	}
 
-	public function create_VLAN($device,$network,$VLAN){
-		return $this->doCall('pool.create_VLAN',array(
-			$this->session_id,
-			$device,
-			$network,
-			$VLAN
-		));
-	}
-
 	public function create_VLAN_from_PIF($PIF,$network,$VLAN){
 		return $this->doCall('pool.create_VLAN_from_PIF',array(
 			$this->session_id,

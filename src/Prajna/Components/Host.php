@@ -158,13 +158,6 @@ class Host
 		));
 	}
 
-	public function get_uncooperative_resident_VMs($host){
-		return $this->doCall('host.get_uncoooperative_resident_VMs',array(
-			$this->session_id,
-			$host
-		));
-	}
-
 	public function evacuate($host){
 		return $this->doCall('host.evacuate',array(
 			$this->session_id,

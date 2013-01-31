@@ -75,32 +75,4 @@ class User
 			$key
 		));
 	}
-
-	public function create(Array $UserRecord){
-		return $this->doCall('user.create',array(
-			$this->session_id,
-			$UserRecord
-		));
-	}
-
-	public function destroy($user){
-		return $this->doCall('user.destroy',array(
-			$this->session_id,
-			$user
-		));
-	}
-
-	public function get_by_uuid($uuid){
-		return $this->doCall('user.get_by_uuid',array(
-			$this->session_id,
-			$uuid
-		));
-	}
-
-	public function get_record($user){
-		return $this->doCall('user.get_record',array(
-			$this->session_id,
-			$user
-		));
-	}
 }

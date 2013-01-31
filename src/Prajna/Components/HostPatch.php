@@ -15,20 +15,6 @@ class HostPatch
 		$this->session_id = $this->client->session_id;
 	}
 
-	public function destroy($host_patch){
-		return $this->doCall('host_patch.destroy',array(
-			$this->session_id,
-			$host_patch
-		));
-	}
-
-	public function apply($host_patch){
-		return $this->doCall('host_patch.apply',array(
-			$this->session_id,
-			$host_patch
-		));
-	}
-
 	public function get_all(){
 		return $this->doCall('host_patch.get_all',array(
 			$this->session_id

@@ -41,13 +41,6 @@ class HostMetrics
 		));
 	}
 
-	public function get_memory_free($HostMetrics){
-		return $this->doCall('host_metrics.get_memory_free',array(
-			$this->session_id,
-			$HostMetrics
-		));
-	}
-
 	public function get_live($HostMetrics){
 		return $this->doCall('host_metrics.get_live',array(
 			$this->session_id,
